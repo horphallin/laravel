@@ -1,0 +1,1 @@
+Hello Laravel, this is show how to use template
