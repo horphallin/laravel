@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+
+.container form input,
+.container form textarea {
+	margin-bottom: 15px;
+}
