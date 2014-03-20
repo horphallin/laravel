@@ -24,6 +24,7 @@ Route::get('user', function()
 Route::get('create', 'WelcomeController@index');
 Route::resource('welcome', 'WelcomeController');
 Route::controller('demo1', 'DemoController');
+Route::controller('users', 'UsersController');
 Route::get('userLayout', function() {
 	return View::make('user');
 });
