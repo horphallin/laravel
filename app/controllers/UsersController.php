@@ -76,7 +76,8 @@ class UsersController extends BaseController {
 	 * @return void
 	 */
 	public function getDashboard() {
-		$this->layout->content = View::make('users.dashboard');
+		$users = DB::table('users')->get();
+		$this->layout->content = View::make('users.dashboard')->with('users', $users);
 	}
 
 	/**
