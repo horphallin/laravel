@@ -15,10 +15,10 @@
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						@if(!Auth::check())
-							<li>{{ HTML::link('users/register', 'Register') }}</li>
-							<li>{{ HTML::link('users/login', 'Login') }}</li>
+							<li><a href="/users/register">{{ Trans('general.register') }}</a>
+							<li><a href="/users/login">{{ Trans('general.login') }}</a>
 						@else
-							<li>{{ HTML::link('users/logout', 'logout') }}</li>
+							<li><a href="/users/logout">{{ Trans('general.logout') }}</a>
 						@endif
 					</ul>
 				</div>
