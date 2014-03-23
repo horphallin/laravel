@@ -11,9 +11,13 @@
 |
 */
 
+/*
 Route::get('/', function() {
 	return View::make('hello');
 });
+*/
+Route::get('/', 'UsersController@getIndex');
+
 Route::get('test', function() {
 	return View::make('hello');
 });
@@ -25,6 +29,17 @@ Route::get('create', 'WelcomeController@index');
 Route::resource('welcome', 'WelcomeController');
 Route::controller('demo1', 'DemoController');
 Route::controller('users', 'UsersController');
+Route::resource('nerds', 'NerdsController');
 Route::get('userLayout', function() {
 	return View::make('user');
 });
+
+Route::get('password/reset', array(
+	'uses' => 'PasswordController@remind',
+	'as' => 'password.remind'
+));
+
+Route::post('password/reset', array(
+	'uses' => 'PasswordController@request',
+	'as' => 'password.request'
+));
