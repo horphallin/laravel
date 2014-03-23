@@ -16,6 +16,16 @@ class UsersController extends BaseController {
 	}
 
 	/**
+	 * the starting point
+	 *
+	 * @return void
+	 */
+	public function getIndex() {
+		$users = User::all();
+		$this->layout->content = View::make('users.dashboard')->with('users', $users);
+	}
+
+	/**
 	 * Get Register used
 	 *
 	 * @return void
@@ -68,16 +78,6 @@ class UsersController extends BaseController {
 			->with('message', 'Your username/password combination was incorrect')
 			->withInput();
 		}
-	}
-
-	/**
-	 * Get dashboard
-	 *
-	 * @return void
-	 */
-	public function getDashboard() {
-		$users = User::all();
-		$this->layout->content = View::make('users.dashboard')->with('users', $users);
 	}
 
 	/**
